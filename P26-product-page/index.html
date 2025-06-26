@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produit | Sneakers Neo-X</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <button id="theme-toggle" aria-label="Basculer thème"></button>
+
+  <!-- ======= Carte produit ======= -->
+  <main class="product-card">
+    <!-- Galerie -->
+    <section class="gallery">
+      <img id="main-img" src="https://images.unsplash.com/photo-1528701800489-20be7a8e0f54?auto=format&fit=crop&w=900&q=80" alt="Sneakers Neo-X" />
+      <div class="thumbs" id="thumbs">
+        <!-- thumbnails injectés en JS -->
+      </div>
+    </section>
+
+    <!-- Détails -->
+    <section class="details">
+      <h1 class="title">Sneakers Neo-X</h1>
+      <p class="price" id="price">€129,90</p>
+      <p class="desc">
+        Baskets légères et respirantes avec semelle amortie pour un confort ultime
+        au quotidien. Edition limitée.
+      </p>
+
+      <!-- Couleurs -->
+      <div class="options">
+        <span>Couleur :</span>
+        <div class="swatches" id="color-swatches">
+          <!-- swatches injectés en JS -->
+        </div>
+      </div>
+
+      <!-- Tailles -->
+      <div class="options">
+        <label for="size">Taille :</label>
+        <select id="size">
+          <option>39</option><option>40</option><option>41</option>
+          <option>42</option><option>43</option><option>44</option>
+        </select>
+      </div>
+
+      <button class="add-btn" id="add-cart">
+        🛒 Ajouter au panier
+      </button>
+    </section>
+  </main>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast">Ajouté au panier ✓</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

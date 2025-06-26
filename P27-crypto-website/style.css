@@ -1,0 +1,101 @@
+/* ---------- Variables ---------- */
+:root {
+  --bg: radial-gradient(circle at 25% 25%, #dfe9f3 0%, #a1b8d9 100%);
+  --card-bg: rgba(255,255,255,0.25);
+  --text: #111;
+  --accent-pos: #16c784;   /* vert gain */
+  --accent-neg: #ea3943;   /* rouge perte */
+}
+
+body.dark {
+  --bg: radial-gradient(circle at 75% 75%, #101522 0%, #0b0d14 100%);
+  --card-bg: rgba(0,0,0,0.35);
+  --text: #f3f4f6;
+}
+
+/* ---------- Base ---------- */
+*,*::before,*::after { box-sizing: border-box; }
+
+html,body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 1s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+header,footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+h1 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.25rem); }
+
+/* ---------- Cartes ---------- */
+#crypto-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  width: min(100%, 1200px);
+  padding: 1rem 2rem 3rem;
+  margin: 0 auto;
+}
+
+.crypto-card {
+  backdrop-filter: blur(20px);
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform .3s;
+}
+.crypto-card:hover { transform: translateY(-6px); }
+
+.crypto-card img {
+  width: 48px; height: 48px;
+  margin-bottom: .8rem;
+}
+
+.crypto-card h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.price {
+  margin-top: .4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.change {
+  margin-top: .2rem;
+  font-size: .95rem;
+  font-weight: 500;
+}
+
+/* ---------- Thème toggle ---------- */
+#theme-toggle {
+  position: fixed;
+  top: 1rem; right: 1rem;
+  width: 44px; height: 44px;
+  border: none;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  background: var(--card-bg);
+  cursor: pointer;
+  transition: transform .3s;
+}
+#theme-toggle::before {
+  content: "☀️";
+  font-size: 1.2rem;
+  line-height: 44px;
+}
+body.dark #theme-toggle::before { content: "🌙"; }
+#theme-toggle:hover { transform: scale(1.1); }
+
+footer a { color: inherit; text-decoration: underline dotted; }
