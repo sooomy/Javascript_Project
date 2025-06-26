@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather Glow</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="card">
+    <h1>🌤️ Weather Glow</h1>
+
+    <!-- Barre de recherche -->
+    <div class="search">
+      <input id="cityInput" type="text" placeholder="Entrez une ville…" />
+      <button id="searchBtn" aria-label="Rechercher">🔍</button>
+      <button id="geoBtn" aria-label="Ma position">📍</button>
+    </div>
+
+    <!-- Météo actuelle -->
+    <section id="current" hidden>
+      <h2 id="cityName"></h2>
+      <time id="localTime"></time>
+      <img id="icon" alt="" />
+      <p id="desc"></p>
+      <p><span id="temp"></span>°C · humidité <span id="hum"></span>% · vent <span id="wind"></span> km/h</p>
+    </section>
+
+    <!-- Prévision 5 jours -->
+    <section id="forecast" hidden>
+      <h3>Prévisions</h3>
+      <div id="forecastGrid"></div>
+    </section>
+
+    <!-- Erreur -->
+    <p id="error" class="hidden"></p>
+  </main>
+</body>
+</html>
