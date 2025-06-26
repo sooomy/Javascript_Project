@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Password Strength Checker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Password Strength Checker 🔐</h1>
+
+    <div class="password-wrapper">
+      <input
+        type="password"
+        id="passwordInput"
+        placeholder="Enter your password"
+        aria-describedby="strengthText"
+        autocomplete="new-password"
+      />
+      <button id="togglePassword" aria-label="Toggle password visibility">
+        <i class="fa-solid fa-eye"></i>
+      </button>
+    </div>
+
+    <div class="strength-meter" aria-live="polite" aria-atomic="true">
+      <div id="strengthBar" class="strength-bar"></div>
+    </div>
+    <p id="strengthText" class="strength-text">Enter a password to check strength</p>
+
+    <ul class="criteria-list">
+      <li id="length" class="criteria">
+        <i class="fa-solid fa-circle-xmark"></i> Minimum 8 characters
+      </li>
+      <li id="uppercase" class="criteria">
+        <i class="fa-solid fa-circle-xmark"></i> At least one uppercase letter
+      </li>
+      <li id="lowercase" class="criteria">
+        <i class="fa-solid fa-circle-xmark"></i> At least one lowercase letter
+      </li>
+      <li id="number" class="criteria">
+        <i class="fa-solid fa-circle-xmark"></i> At least one number
+      </li>
+      <li id="special" class="criteria">
+        <i class="fa-solid fa-circle-xmark"></i> At least one special character (!@#$%^&*)
+      </li>
+    </ul>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
