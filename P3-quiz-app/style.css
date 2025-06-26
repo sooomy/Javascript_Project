@@ -1,0 +1,56 @@
+/* ---------- Variables thème ---------- */
+:root{
+  --bg:linear-gradient(135deg,#667eea,#764ba2);
+  --card:rgba(255,255,255,0.9);
+  --text:#222;
+  --accent:#764ba2;
+}
+body.dark{
+  --bg:linear-gradient(135deg,#1f1f1f,#434343);
+  --card:rgba(40,40,40,0.9);--text:#f5f5f5;--accent:#9b7bfd;
+}
+
+/* ---------- Base ---------- */
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
+body{
+  min-height:100vh;background:var(--bg);color:var(--text);
+  display:flex;justify-content:center;align-items:center;padding:20px;transition:background 1s;
+}
+.card{
+  width:100%;max-width:700px;padding:32px;border-radius:14px;backdrop-filter:blur(12px);
+  background:var(--card);box-shadow:0 18px 40px rgba(0,0,0,0.25);text-align:center;
+  display:flex;flex-direction:column;gap:18px;
+}
+.hidden{display:none}
+button,select{
+  padding:10px 18px;border:none;border-radius:10px;font-size:1rem;
+  background:var(--accent);color:#fff;font-weight:600;cursor:pointer;
+}
+button[disabled]{opacity:.5;cursor:not-allowed}
+select{background:var(--card);color:var(--text);border:2px solid var(--accent);}
+
+/* quiz écran */
+.quiz-header{display:flex;justify-content:space-between;align-items:center}
+#progressBar{
+  flex-grow:1;height:8px;background:#ddd;border-radius:6px;overflow:hidden;margin-right:12px;
+}
+#progressBar::after{
+  content:'';display:block;height:100%;width:0;background:var(--accent);transition:width .3s;
+}
+ul{list-style:none;text-align:left}
+.answer{
+  margin:8px 0;padding:12px;border:2px solid transparent;border-radius:10px;
+  background:rgba(0,0,0,0.05);cursor:pointer;transition:background .2s;
+}
+.answer:hover{background:rgba(0,0,0,0.1)}
+.answer.correct{background:#c8e6c9;border-color:#2e7d32;color:#2e7d32}
+.answer.wrong{background:#ffcdd2;border-color:#c62828;color:#b71c1c}
+
+/* thème toggle */
+#themeToggle{
+  position:fixed;top:16px;right:16px;width:42px;height:42px;
+  border:none;border-radius:50%;background:var(--card);font-size:1.2rem;cursor:pointer;
+}
+
+/* responsive */
+@media(max-width:500px){button,select{font-size:.9rem}}

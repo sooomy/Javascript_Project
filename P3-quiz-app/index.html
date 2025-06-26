@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Master</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- thème -->
+  <button id="themeToggle" aria-label="Basculer thème">🌙</button>
+
+  <!-- écran accueil -->
+  <section id="startScreen" class="card">
+    <h1>🎯 Quiz Master</h1>
+
+    <label for="category">Catégorie :</label>
+    <select id="category">
+      <option value="all">🌐 Toutes</option>
+      <option value="geo">🌍 Géographie</option>
+      <option value="tech">💻 Tech</option>
+      <option value="math">➕ Math</option>
+    </select>
+
+    <label for="timeSelect">Temps / question :</label>
+    <select id="timeSelect">
+      <option value="0">⏱️ Sans limite</option>
+      <option value="15">15 s</option>
+      <option value="30" selected>30 s</option>
+      <option value="45">45 s</option>
+    </select>
+
+    <button id="startBtn">Démarrer</button>
+    <hr>
+    <h2>🏆 Meilleurs scores</h2>
+    <ol id="leaderboard"></ol>
+  </section>
+
+  <!-- écran quiz -->
+  <section id="quizScreen" class="card hidden">
+    <header class="quiz-header">
+      <span id="progressBar"></span>
+      <span id="timer">30</span>
+    </header>
+
+    <h2 id="question"></h2>
+    <ul id="answers"></ul>
+
+    <footer class="quiz-footer">
+      <span id="progressText"></span>
+      <button id="nextBtn" disabled>Suivant</button>
+    </footer>
+  </section>
+
+  <!-- écran résultat -->
+  <section id="resultScreen" class="card hidden" aria-live="polite">
+    <h2>Résultat</h2>
+    <p id="scoreText"></p>
+    <button id="restartBtn">Rejouer</button>
+    <button id="homeBtn">Accueil</button>
+  </section>
+</body>
+</html>
