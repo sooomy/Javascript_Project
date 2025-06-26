@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>🌟 Pro Form Validation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="form" novalidate>
+    <h2>Register Account</h2>
+
+    <div class="form-control">
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" required minlength="3" />
+      <small>Error message</small>
+    </div>
+
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required />
+      <small>Error message</small>
+    </div>
+
+    <div class="form-control">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" required minlength="8" />
+      <small>Error message</small>
+    </div>
+
+    <div class="form-control">
+      <label for="confirm">Confirm Password</label>
+      <input id="confirm" name="confirm" type="password" required />
+      <small>Error message</small>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
