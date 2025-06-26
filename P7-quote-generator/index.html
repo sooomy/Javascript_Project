@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quote Generator Deluxe</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Toggle clair / sombre -->
+  <button id="themeToggle" aria-label="Basculer thème">🌙</button>
+
+  <main class="container" role="main">
+    <h1>💬 Quote of the Moment</h1>
+
+    <div class="quote-box" aria-live="polite">
+      <blockquote id="quote">Chargement…</blockquote>
+      <span id="author">—</span>
+    </div>
+
+    <!-- Actions -->
+    <div class="controls">
+      <select id="tagSelect" aria-label="Catégorie">
+        <option value="">🌐 Tout</option>
+        <option value="inspirational">Inspiration</option>
+        <option value="life">Vie</option>
+        <option value="success">Succès</option>
+        <option value="friendship">Amitié</option>
+        <option value="technology">Tech</option>
+      </select>
+
+      <div class="btn-group">
+        <button id="newBtn">🔄 Nouvelle</button>
+        <button id="copyBtn">📋 Copier</button>
+        <button id="tweetBtn">🐦 Tweet</button>
+        <button id="favBtn" aria-label="Ajouter aux favoris">☆</button>
+      </div>
+    </div>
+
+    <!-- Favoris -->
+    <section id="favSection" hidden>
+      <h2>⭐ Vos favoris</h2>
+      <ul id="favList"></ul>
+    </section>
+  </main>
+</body>
+</html>

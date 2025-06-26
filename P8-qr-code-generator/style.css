@@ -1,0 +1,104 @@
+/* ---------- Variables thème ---------- */
+:root {
+  --bg-grad: linear-gradient(135deg, #00c9ff, #92fe9d);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --text: #222;
+  --accent: #00c9ff;
+  --shadow: rgba(0, 0, 0, 0.15);
+}
+body.dark {
+  --bg-grad: linear-gradient(135deg, #232526, #414345);
+  --card-bg: rgba(40, 40, 40, 0.9);
+  --text: #f7f7f7;
+  --accent: #00b1e6;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-grad);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  transition: background 1s;
+}
+.container {
+  width: 100%;
+  max-width: 440px;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  padding: 28px 32px;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px var(--shadow);
+  text-align: center;
+}
+h1 { font-size: 1.8rem; margin-bottom: 20px; }
+
+form { display: flex; flex-direction: column; gap: 14px; }
+input[type="text"] {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #bbb;
+  border-radius: 10px;
+  outline-offset: 2px;
+}
+.row { display: flex; gap: 10px; align-items: center; }
+select, button[type="submit"] {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+}
+select { flex: 1; }
+button[type="submit"] {
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+button[type="submit"]:hover { transform: translateY(-2px); }
+
+/* Preview */
+#preview { margin-top: 24px; }
+#qrcode canvas { border-radius: 12px; }
+#downloadBtn {
+  margin-top: 14px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#downloadBtn:hover { opacity: 0.9; }
+
+/* Historique */
+#historySection { margin-top: 30px; text-align: left; }
+#historySection h2 { font-size: 1.2rem; margin-bottom: 12px; }
+#historyList { list-style: none; display: flex; flex-direction: column; gap: 8px; max-height: 150px; overflow-y: auto; }
+#historyList li {
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#historyList li:hover { background: rgba(0, 0, 0, 0.1); }
+
+/* Theme toggle */
+#themeToggle {
+  position: fixed;
+  top: 16px; right: 16px;
+  background: var(--card-bg);
+  border: none; border-radius: 50%;
+  width: 42px; height: 42px;
+  font-size: 1.2rem; cursor: pointer;
+  box-shadow: 0 4px 12px var(--shadow);
+}
