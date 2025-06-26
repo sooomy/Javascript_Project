@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notely Pro</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Toggle clair / sombre -->
+  <button id="themeToggle" aria-label="Basculer thème">🌙</button>
+
+  <header class="topbar">
+    <h1>🗒️ Notely Pro</h1>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Rechercher …" aria-label="Recherche de notes" />
+      <select id="sortSelect" aria-label="Trier les notes">
+        <option value="updated_desc">📅 Récent → Ancien</option>
+        <option value="updated_asc">📅 Ancien → Récent</option>
+        <option value="title_asc">🔤 Titre A-Z</option>
+        <option value="title_desc">🔤 Titre Z-A</option>
+      </select>
+      <button id="addNoteBtn" aria-label="Nouvelle note">➕</button>
+    </div>
+  </header>
+
+  <main id="notesContainer"></main>
+
+  <!-- toast -->
+  <div id="toastBox" aria-live="assertive"></div>
+</body>
+</html>

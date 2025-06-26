@@ -1,0 +1,76 @@
+/* ------ Variables thème ------ */
+:root{
+  --bg:linear-gradient(135deg,#74ebd5,#acb6e5);
+  --card:rgba(255,255,255,0.9);
+  --text:#222;
+  --accent:#5f27cd;
+  --shadow:rgba(0,0,0,0.15);
+}
+body.dark{
+  --bg:linear-gradient(135deg,#1d1d1d,#3e3e3e);
+  --card:rgba(40,40,40,0.9);
+  --text:#f0f0f0;
+  --accent:#845ef7;
+  --shadow:rgba(0,0,0,0.6);
+}
+
+/* ------ Base ------ */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{
+  min-height:100vh;background:var(--bg);color:var(--text);transition:background 1s;
+  display:flex;flex-direction:column;
+}
+.topbar{
+  padding:18px 22px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
+}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+#searchInput{
+  padding:8px 12px;border-radius:10px;border:2px solid var(--accent);min-width:200px;
+}
+#sortSelect{
+  padding:8px 12px;border-radius:10px;border:none;background:var(--accent);color:#fff;font-weight:600;cursor:pointer;
+}
+#addNoteBtn{
+  padding:8px 14px;border:none;border-radius:10px;background:var(--accent);color:#fff;font-size:1.1rem;cursor:pointer;
+}
+#addNoteBtn:hover{transform:scale(1.05)}
+
+#themeToggle{
+  position:fixed;top:12px;right:12px;width:42px;height:42px;border:none;border-radius:50%;
+  background:var(--card);cursor:pointer;font-size:1.2rem;box-shadow:0 4px 12px var(--shadow);
+}
+
+/* Masonry grid */
+#notesContainer{
+  column-width:260px;column-gap:18px;padding:22px;
+}
+.note{
+  display:inline-block;width:100%;background:var(--card);backdrop-filter:blur(10px);
+  border-radius:12px;margin:0 0 18px;border-top:6px solid var(--accent);
+  box-shadow:0 8px 20px var(--shadow);transition:transform .15s;
+}
+.note:hover{transform:translateY(-4px)}
+
+.note-header{
+  display:flex;justify-content:space-between;align-items:center;padding:12px 14px;
+}
+.note-header input{
+  font-size:1rem;font-weight:700;border:none;background:transparent;width:80%;color:inherit;
+}
+.note-header input:focus{outline:none}
+.note-header .pin{cursor:pointer;font-size:1.2rem}
+.note textarea{
+  width:100%;border:none;resize:none;padding:0 14px 14px;background:transparent;color:inherit;
+  font-size:0.95rem;min-height:100px;outline:none;
+}
+
+/* Toast */
+#toastBox{
+  position:fixed;bottom:1rem;right:1rem;display:flex;flex-direction:column;gap:.6rem;z-index:1000;
+}
+.toast{
+  background:var(--card);color:var(--text);padding:12px 16px;border-radius:10px;box-shadow:0 8px 18px var(--shadow);
+  animation:fadeIn .3s ease,fadeOut .3s ease 2.7s forwards;
+}
+@keyframes fadeIn{from{opacity:0;transform:translateX(60%)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeOut{to{opacity:0;transform:translateX(60%)}}
