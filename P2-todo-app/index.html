@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notedark – To-Do</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="app">
+
+    <header>
+      <h1>🗒️ Notedark</h1>
+      <span id="counter"></span>
+    </header>
+
+    <!-- Formulaire d’ajout -->
+    <form id="todoForm" autocomplete="off">
+      <input type="text" id="taskInput" placeholder="Nouvelle tâche…" required />
+      <select id="catInput">
+        <option value="Général">Général</option>
+        <option value="Travail">Travail</option>
+        <option value="Perso">Perso</option>
+        <option value="Courses">Courses</option>
+      </select>
+      <input type="date" id="dateInput" />
+      <button type="submit">Ajouter +</button>
+    </form>
+
+    <!-- Outils de filtre -->
+    <div class="tools">
+      <input type="text" id="searchInput" placeholder="Rechercher…" />
+      <select id="filterCat">
+        <option value="">Toutes 📂</option>
+        <option value="Général">Général</option>
+        <option value="Travail">Travail</option>
+        <option value="Perso">Perso</option>
+        <option value="Courses">Courses</option>
+      </select>
+    </div>
+
+    <!-- Liste des tâches -->
+    <ul id="list"></ul>
+
+  </main>
+</body>
+</html>
