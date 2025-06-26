@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Pro Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="calculator">
+    <div id="display">0</div>
+    <div class="buttons">
+      <button class="btn func" id="clear"><i class="fa fa-trash"></i></button>
+      <button class="btn func" id="back"><i class="fa fa-delete-left"></i></button>
+      <button class="btn operator" data-op="/">÷</button>
+      <button class="btn operator" data-op="*">×</button>
+
+      <button class="btn num">7</button>
+      <button class="btn num">8</button>
+      <button class="btn num">9</button>
+      <button class="btn operator" data-op="-">−</button>
+
+      <button class="btn num">4</button>
+      <button class="btn num">5</button>
+      <button class="btn num">6</button>
+      <button class="btn operator" data-op="+">+</button>
+
+      <button class="btn num">1</button>
+      <button class="btn num">2</button>
+      <button class="btn num">3</button>
+      <button class="btn equal" id="equals">=</button>
+
+      <button class="btn num zero">0</button>
+      <button class="btn num">.</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
