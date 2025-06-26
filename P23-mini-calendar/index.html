@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini Calendar Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="calendar-container" role="application" aria-label="Calendrier personnel">
+    <header class="calendar-header">
+      <button id="prevMonth" aria-label="Mois précédent">&lt;</button>
+      <h2 id="monthYear" aria-live="polite"></h2>
+      <button id="nextMonth" aria-label="Mois suivant">&gt;</button>
+    </header>
+
+    <div class="calendar-weekdays" role="row">
+      <div role="columnheader">Dim</div><div role="columnheader">Lun</div><div role="columnheader">Mar</div><div role="columnheader">Mer</div>
+      <div role="columnheader">Jeu</div><div role="columnheader">Ven</div><div role="columnheader">Sam</div>
+    </div>
+
+    <div class="calendar-days" id="calendarDays" role="grid"></div>
+
+    <section class="events-section" aria-live="polite" aria-atomic="true">
+      <h3 id="selectedDateTitle">Sélectionnez une date</h3>
+      <ul id="eventList" class="event-list"></ul>
+      <form id="eventForm" aria-label="Ajouter un événement">
+        <input type="text" id="eventInput" placeholder="Nouvel événement..." aria-label="Description de l'événement" required />
+        <button type="submit">Ajouter</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

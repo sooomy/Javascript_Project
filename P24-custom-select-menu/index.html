@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sélecteur de Pays</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="custom-select">
+    <button class="select-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="selected-label">
+      <span id="selected-label" class="selected-option">Sélectionnez un pays</span>
+      <svg class="arrow" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" stroke-width="3" d="M6 9l6 6 6-6" />
+      </svg>
+    </button>
+
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Rechercher un pays..."
+      aria-label="Recherche de pays"
+      hidden
+    />
+
+    <ul class="options" role="listbox" tabindex="-1">
+      <!-- Les options seront injectées via JS -->
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
