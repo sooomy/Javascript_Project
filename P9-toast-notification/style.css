@@ -1,0 +1,73 @@
+/* ===== Variables thème clair / sombre ===== */
+:root {
+  --bg-grad: linear-gradient(135deg,#74ebd5,#9face6);
+  --toast-bg   : rgba(255,255,255,0.8);
+  --toast-blur : blur(12px);
+  --text       : #333;
+  --shadow     : rgba(0,0,0,0.15);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-grad: linear-gradient(135deg,#232526,#414345);
+    --toast-bg: rgba(40,40,40,0.8);
+    --text: #fafafa;
+    --shadow: rgba(0,0,0,0.4);
+  }
+}
+
+/* ===== Layout démo ===== */
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif}
+body{
+  min-height:100vh;display:flex;justify-content:center;align-items:center;
+  background:var(--bg-grad);color:var(--text);
+}
+.demo{text-align:center;}
+h1{margin-bottom:1rem;font-weight:700;font-size:2rem}
+.buttons{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+button{
+  padding:.75rem 1.4rem;border:none;border-radius:8px;font-size:1rem;font-weight:600;
+  color:#fff;cursor:pointer;transition:transform .15s ease;
+}
+button:active{transform:scale(.96)}
+button[data-type="success"] {background:#28a745}
+button[data-type="error"]   {background:#dc3545}
+button[data-type="info"]    {background:#007bff}
+button[data-type="warning"] {background:#ffc107;color:#333}
+
+/* ===== Toast ===== */
+#toastBox{
+  position:fixed;bottom:1.5rem;right:1.5rem;display:flex;flex-direction:column;gap:.75rem;
+  z-index:999;
+}
+.toast{
+  min-width:260px;max-width:320px;pointer-events:auto;overflow:hidden;
+  display:flex;align-items:flex-start;gap:.75rem;
+  background:var(--toast-bg);backdrop-filter:var(--toast-blur);
+  color:var(--text);border-left:6px solid currentColor;border-radius:10px;
+  padding:14px 18px;box-shadow:0 12px 24px var(--shadow);
+  animation:slideIn .35s ease-out;
+}
+.toast.success {color:#28a745}
+.toast.error   {color:#dc3545}
+.toast.info    {color:#007bff}
+.toast.warning {color:#ffc107}
+
+.toast .icon{font-size:1.3rem;line-height:1}
+.toast .msg{flex:1;font-size:.95rem}
+.toast button.close{
+  background:transparent;border:none;color:inherit;font-size:1.1rem;cursor:pointer;
+  line-height:1;padding:0 4px;transition:opacity .2s;
+}
+.toast button.close:hover{opacity:.6}
+
+/* barre de progression */
+.toast .progress{
+  position:absolute;bottom:0;left:0;height:4px;background:currentColor;
+  width:100%;transform-origin:left;animation:progress linear forwards;
+}
+
+/* Animations */
+@keyframes slideIn{from{transform:translateX(120%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes slideOut{to{transform:translateX(120%);opacity:0}}
+/* durée sera définie en CSS var runtime */
+@keyframes progress{to{width:0%}}

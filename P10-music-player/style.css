@@ -1,0 +1,111 @@
+body {
+  background: linear-gradient(135deg, #121212, #1f1f1f);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.player {
+  background: #222;
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.track-art {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  margin: 20px auto;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+}
+
+.track-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.track-artist {
+  font-size: 16px;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.now-playing {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.buttons i {
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.buttons i:hover {
+  color: #1db954; /* Spotify green */
+  transform: scale(1.1);
+}
+
+.playpause-track i {
+  font-size: 60px;
+}
+
+.prev-track i, .next-track i {
+  font-size: 28px;
+}
+
+.slider_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.seek_slider, .volume_slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: #555;
+  border-radius: 5px;
+  outline: none;
+  width: 60%;
+  transition: background 0.3s;
+}
+
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #1db954;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.current-time, .total-duration {
+  font-size: 13px;
+  color: #ccc;
+  margin: 0 10px;
+}

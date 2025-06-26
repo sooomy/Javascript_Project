@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toast Manager – Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="demo">
+    <h1>Dashboard Demo</h1>
+    <div class="buttons">
+      <button data-type="success"  data-msg="Données enregistrées !">💾 Enregistrer</button>
+      <button data-type="error"    data-msg="Erreur serveur !">🗑️ Supprimer</button>
+      <button data-type="info"     data-msg="Synchronisation terminée.">🔄 Synchroniser</button>
+      <button data-type="warning"  data-msg="Formulaire incomplet.">⚠️ Valider</button>
+    </div>
+  </main>
+
+  <!-- conteneur toasts -->
+  <section id="toastBox" aria-live="assertive" aria-label="Notifications" tabindex="-1"></section>
+
+  <script src="script.js"></script>
+</body>
+</html>
