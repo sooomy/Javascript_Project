@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to bottom right, #141e30, #243b55);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .stopwatch-box {
+    background: #1c1c1c;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 128, 0.15);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .stopwatch-box h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #1db954;
+  }
+  
+  .time-display {
+    font-size: 56px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  button {
+    background: #1db954;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  button:hover {
+    background: #17a84b;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: scale(0.97);
+  }
+  
+  #startStopBtn.running {
+    background: #dc3545;
+  }
+  
+  #startStopBtn.running:hover {
+    background: #b02a37;
+  }
+  
