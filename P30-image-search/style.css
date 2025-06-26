@@ -1,0 +1,75 @@
+/* ----- Variables palette ----- */
+:root {
+  --bg-start: #141e30;
+  --bg-end:   #243b55;
+  --accent:   #1db954;
+  --card-bg:  rgba(255,255,255,0.08);
+  --text-main:#f5f5f5;
+}
+
+/* Reset & base */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,var(--bg-start),var(--bg-end));
+  color:var(--text-main);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Header & search bar */
+header{padding:40px 20px;text-align:center}
+h1{font-size:2.8rem;font-weight:700;letter-spacing:1px}
+h1 span{color:var(--accent)}
+.search-bar{
+  margin-top:30px;display:flex;justify-content:center;
+  background:var(--card-bg);backdrop-filter:blur(8px);
+  border-radius:50px;padding:8px;gap:8px;max-width:420px;width:90%;
+}
+.search-bar input{
+  flex:1;background:transparent;border:none;outline:none;
+  font-size:1.1rem;color:var(--text-main);padding-left:18px;
+}
+.search-bar button{
+  border:none;cursor:pointer;font-size:1.3rem;color:#fff;
+  background:var(--accent);width:48px;height:48px;border-radius:50%;
+  transition:transform .2s;
+}
+.search-bar button:hover{transform:scale(1.08)}
+
+/* Grid */
+.image-results{
+  width:90%;max-width:1200px;margin-top:40px;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:24px;
+}
+.image-results img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;
+  background:var(--card-bg);
+  box-shadow:0 8px 18px rgba(0,0,0,.25);transition:transform .3s;
+}
+.image-results img:hover{transform:scale(1.03)}
+
+/* Loader */
+.loader{
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  display:flex;justify-content:center;align-items:center;
+  background:rgba(0,0,0,.45);backdrop-filter:blur(4px);
+}
+.loader::after{
+  content:"";width:64px;height:64px;border:6px solid var(--accent);
+  border-top-color:transparent;border-radius:50%;
+  animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hidden{display:none}
+
+/* Load more */
+#loadMoreBtn{
+  margin:48px 0 80px; padding:14px 28px;
+  border:none;border-radius:8px;font-size:1rem;
+  background:var(--accent);color:#fff;cursor:pointer;
+  transition:background .25s,transform .15s;
+}
+#loadMoreBtn:hover{background:#17a84b;transform:translateY(-2px)}

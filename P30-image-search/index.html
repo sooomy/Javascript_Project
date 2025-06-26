@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recherche d’Images</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1><span>Image</span>Finder</h1>
+
+    <div class="search-bar">
+      <input id="searchInput" type="text" placeholder="Chatons, paysages, …" />
+      <button id="searchBtn">🔍</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="imageResults" class="image-results"></div>
+    <button id="loadMoreBtn" class="hidden">Charger plus</button>
+  </main>
+
+  <div id="loader" class="loader hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

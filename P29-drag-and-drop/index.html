@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag-and-Drop Accessible</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Zone de glisser-déposer</h1>
+
+  <!-- Conteneur de départ -->
+  <section id="source" class="zone" role="list" aria-label="Objets à déplacer">
+    <article class="card" tabindex="0" draggable="true" role="listitem">Carte A</article>
+    <article class="card" tabindex="0" draggable="true" role="listitem">Carte B</article>
+    <article class="card" tabindex="0" draggable="true" role="listitem">Carte C</article>
+  </section>
+
+  <!-- Conteneur d’arrivée -->
+  <section id="target" class="zone" role="list" aria-label="Déposez ici">
+    <p class="hint">Déposez vos cartes</p>
+  </section>
+
+  <!-- Région live pour lecteurs d’écran -->
+  <div aria-live="polite" class="sr-only" id="live"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
