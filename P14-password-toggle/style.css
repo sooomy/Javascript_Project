@@ -1,0 +1,31 @@
+* { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body {
+  background: linear-gradient(135deg, #141e30, #243b55);
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  margin: 0; color: #fff;
+}
+.field { width: 100%; max-width: 360px; }
+.password-field {
+  position: relative; margin-top: 8px;
+}
+.password-field input {
+  width: 100%; padding: 12px 48px 12px 12px;
+  border: 2px solid #555; border-radius: 8px; font-size: 16px;
+  background: #1c1c1c; color: #fff;
+}
+.password-field input:focus {
+  border-color: #1db954; outline: none;
+}
+.password-field button {
+  position: absolute; right: 8px; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: none; padding: 4px;
+  cursor: pointer; display: flex; align-items: center;
+}
+.password-field button svg {
+  width: 24px; height: 24px;
+}
+.password-field button:focus svg,
+.password-field button:hover svg {
+  fill: #1db954;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pro Password Toggle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="field">
+    <label for="password">Password</label>
+    <div class="password-field">
+      <input id="password" type="password" aria-describedby="togglePassword" autocomplete="current-password" />
+      <button id="togglePassword" aria-label="Show password" aria-pressed="false">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path id="eyeIcon" fill="#6c757d" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zm0 12a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm0-7.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
